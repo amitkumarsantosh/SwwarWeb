@@ -1,0 +1,195 @@
+
+<% layout("/layouts/boilerplate") %>
+
+<body>
+    <style>
+        .index-heading-div {
+            display: flex;
+            gap: 1.6rem;
+            margin-top: 2rem;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            justify-content: space-between;
+            align-items: center;
+            overflow-x: scroll;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none;  /* IE 10+ */
+            
+        }
+        .index-heading-div::-webkit-scrollbar {
+            display: none; /* Chrome, Safari */
+        }
+
+        .index-heading-div i{
+            color: #FF5A5F;
+        }
+        .index-heading-div .alert-warning{
+
+            margin-top: 1rem;
+        }
+        .all-listing-header{
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            margin-left: 1rem;
+        }
+        .filter{
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            justify-content: center;
+            align-items: center;
+            padding: 0.7rem;
+            margin: 0.1rem;
+            border-radius: 0.3rem;
+            /* box-shadow: 4px 4px 10px gray; */
+            height: 5rem;
+            
+            
+
+        }
+        .filter i{
+            font-size: 1.6rem;
+        }
+        .filter p{
+            font-size: 0.8rem;
+            margin-bottom: -0.2rem;
+        }
+        .tax-switch{
+            gap: 0.4rem !important;
+            width: fit-content !important;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-right: -1rem;
+        }
+        .tax-switch input{
+            margin-left: 0.5rem !important;
+        }
+        .tax-switch label{
+            font-size: 0.8rem;
+        }
+        .tax-text {
+            display: none;
+        }
+    </style>
+
+    <div class="index-heading-div">
+        <div class=" tax-switch form-check form-switch filter ml-1">
+            <input class="form-check-input tax-switch-btn" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault">With Tax</label>
+        </div>
+        <div class="filter">
+            <i class="fa-solid fa-fire"></i>
+            <p>Trending</p>
+
+        </div>
+        <div class="filter">
+            <i class="fa-solid fa-tractor"></i>
+            <p>Farms</p>
+
+        </div><div class="filter">
+            <i class="fa-solid fa-person-booth"></i>
+            <p>Rooms</p>
+
+        </div><div class="filter">
+            <i class="fa-solid fa-mountain-sun"></i>
+            <p>Amazing views</p>
+
+        </div><div class="filter">
+            <i class="fa-solid fa-city"></i>
+            <p>Iconic cities </p>
+
+        </div><div class="filter">
+            <i class="fa-solid fa-fire"></i>
+            <p>Pools</p>
+
+        </div><div class="filter">
+            <i class="fa-solid fa-umbrella-beach"></i>
+            <p>Beaches</p>
+
+        </div><div class="filter">
+            <i class="fa-solid fa-shield-dog"></i>
+            <p>Cabins</p>
+
+        </div><div class="filter">
+            
+            <i class="fa-solid fa-water"></i>
+            <p>LakeFront</p>
+
+        </div>
+        
+
+    </div>
+
+
+    <style>
+        .btn-book {
+            background: #27ae60;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            
+            text-decoration: none;
+            display: inline-block;
+        }
+        .tax-text{
+            display: none;
+
+        }
+    </style>
+
+    <div class="card-row1">
+        <% for(let listing of allListings){ %>
+
+        <a style="text-decoration: none;" href="/listings/<%= listing._id %>">
+
+            <div class="card listing-card" >
+                <img class="card-img-top" src= <%=listing.image.url%> alt="Card image cap">
+                <div class="card-img-overlay"></div>
+                <div class="card-body">
+                    <p class="card-text"><b><%= listing.title%></b><br>
+                        &#8377;<%= Number(listing.price).toLocaleString("en-IN") %>
+                        <b class="tax-text">+ 18% GST</b>
+
+                    </p>
+                </div>
+            </div>
+
+        </a>
+        
+
+        <% } %>
+    </div>
+
+
+    
+
+
+ 
+    
+</body>
+
+
+
+
+<script>
+    const taxSwitch = document.querySelector("#flexSwitchCheckDefault");
+    const taxTexts = document.querySelectorAll(".tax-text");
+
+    taxSwitch.addEventListener("change", () => {
+        for (const t of taxTexts) {
+            if (taxSwitch.checked) {
+                t.style.display = "inline";
+            } else {
+                t.style.display = "none";
+            }
+        }
+    });
+</script>
+
+

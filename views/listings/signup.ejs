@@ -1,0 +1,85 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+  
+
+  <div class="form-full-body">
+    <div class="form-container">
+    <h2 style="font-size: 1.3rem; display: block; text-align: center;" >New user signup</h2>
+    <form class="from needs-validation" action="/signup" method="POST" novalidate>
+
+      <div>
+        <label class="form-label" for="signup-username">Entre Username</label>
+        <input
+          type="text"
+          id="signup-username"
+          name="user[username]"
+          placeholder="Enter username"
+          required
+          maxlength="100"
+          class="form-control"
+        />
+        <div class="valid-feedback">Looks good</div>
+        <div class="invalid-feedback">Entre valid username</div>
+
+      </div>
+      
+
+      
+      <div>
+        <label class="form-label" for="signup-email">Entre Email</label>
+        
+        <input
+          type="email"
+          id="signup-email"
+          name="user[email]"
+          placeholder="Entre email"
+          min="0"
+          step="1"
+          required
+          
+          class="form-control"
+
+        />
+        <div class="valid-feedback">Looks good</div>
+        <div class="invalid-feedback">Entre Valid email</div>
+
+        
+        
+      </div>
+
+      <div>
+        <label class="form-label" for="signup-password">Password</label>
+        <input
+          type="password"
+          id="signup-password"
+          name="user[password]"
+          placeholder="Enter password"
+          required
+          maxlength="100"
+          class="form-control"
+
+        />
+        <div class="valid-feedback">Looks good</div>
+        <div class="invalid-feedback">Entre valid valid</div>
+
+        
+      </div>
+
+      
+
+      
+
+      
+
+      
+      
+
+      <div class="submit-btn-div">
+        <button  type="submit" class="btn-submit btn btn-danger btn-sm">submit</button>
+      </div>
+    </form>
+  </div>
+  </div>
+
+</body>
+

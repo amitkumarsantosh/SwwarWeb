@@ -1,0 +1,10 @@
+
+<% layout("/layouts/boilerplate") %>
+
+<body >
+  <div class="error-box">
+    <h1><%=err.status || 500 %> 😢</h1>
+    <p><%= err.message || "Something went wrong!" %></p>
+    <a href="/listings" class="error-home-link btn btn-danger">Go back home</a>
+  </div>
+</body>

@@ -1,0 +1,480 @@
+/* ---------------------------------- */
+/*           GLOBAL RESET             */
+/* ---------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+
+body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ---------------------------------- */
+/*           MAIN CONTAINER           */
+/* ---------------------------------- */
+.container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 !important;
+    min-height: 100vh;
+}
+
+
+/* ---------------------------------- */
+/*           CARD LIST VIEW           */
+/* ---------------------------------- */
+.card-row1 {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.listing-card {
+    width: 16rem;
+    height: 16rem;
+    margin: 0.5rem;
+    border: none;
+    border-radius: 1rem;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.listing-card img,
+.card-img-top {
+    width: 100%;
+    height: 10rem !important;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.card-body {
+    padding: 0.5rem 1rem;
+}
+
+.card-text {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #222;
+}
+
+.card-img-overlay {
+    opacity: 0;
+}
+
+.card-img-overlay:hover {
+    opacity: 0.4;
+    background-color: #fff;
+}
+
+
+/* ---------------------------------- */
+/*              FOOTER               */
+/* ---------------------------------- */
+footer {
+    background-color: #ebebeb;
+    padding: 1.5rem 1rem;
+    text-align: center;
+}
+
+.f-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1rem;
+    color: #222;
+}
+
+.f-info-links,
+.f-info-socials {
+    width: 100%;
+    color: #222;
+}
+
+.f-info-links a {
+    color: #222;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+.f-info-socials {
+    font-size: 1.3rem;
+}
+
+.f-info-socials i {
+    margin-right: 1rem;
+}
+
+
+/* ---------------------------------- */
+/*         LISTING DETAIL PAGE        */
+/* ---------------------------------- */
+.all-listing-header {
+    margin: 2rem 0 0 3rem;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.listing-card-show {
+    margin: 2rem;
+    padding: 1rem;
+    width: 50rem;
+    display: flex;
+    max-width: 80%;
+    
+    flex-direction: row;
+    gap: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.show-cont-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+
+.show-cont-1 img {
+    width: calc(100% - 1rem);
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+    height: 16rem;
+    object-fit: cover;
+}
+
+.show-cont-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.show-cont-btns a {
+    margin: 1rem;
+}
+
+.show-cont-2 {
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.show-cont-2 .listing-title {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+.show-cont-2 .listing-location {
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+.review-btn{
+    text-decoration: none;
+    
+}
+.price-n-btn-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.btn{
+    width: fit-content;
+}
+
+/* review container styles */
+.emoji-rating input{
+    display: none;
+}
+.review-container{
+    
+    display: flex;
+    gap: 1rem;
+    max-width: 80%;
+    margin-top: 1rem !important;
+    margin: 2rem;
+    padding: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 2rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+
+}
+.review-container h2{
+    font-size: 1.4rem;
+    margin-bottom: -0.6rem;
+
+}
+.reviews-heading{
+    margin-top: 1rem;
+    margin-bottom: 0.1rem;
+    text-align: center;
+    display: inline-block;
+}
+
+.emoji-rating{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.emoji-rating label{
+    font-size: 1.6rem;
+}
+.comment-box label{
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+    margin-left: 0.2rem;
+}
+/* .comment-box{
+    display: flex;
+    flex-direction: column;
+    gap:0.2rem;
+} */
+
+@media (max-width: 700px) {
+  /* Styles for screens up to 768px wide (tablets & phones) */
+  .listing-card-show{
+    margin: 1rem;
+    padding: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0.2rem;
+    padding: 0.2rem;
+  }
+  .listing-card-show img{
+    width: 100%;
+    height: auto;
+  }
+  .show-cont-2{
+    padding: 1rem;
+
+  }
+  .show-cont-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    }
+    .review-container{
+        width: 90%;
+        padding: 0.2rem;
+        padding-top: 1rem;
+
+    }
+
+
+}
+/* review div style */
+
+.reviews-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  max-width: 90%;
+  margin: 2rem auto;
+  padding: 1rem;
+  border-top: 2px solid #eee;
+}
+
+.review-info{
+
+    margin-bottom: 0.1rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.review-author-info{
+    gap: 0.5rem;
+    display: flex !important;
+    align-items: center !important;
+    flex-direction: row;
+    
+
+
+
+}
+.review-author-icon{
+    margin-bottom: 0.1rem !important;
+   
+    font-size: 1rem;
+}
+.review-author-username{
+    text-align: center;
+    margin-bottom: 0.1rem !important;
+    font-size: 1rem;
+}
+.review-card {
+    margin-left: 0.5rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.review-comment {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.3rem;
+}
+
+.review-meta {
+    gap: 1rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.review-rating {
+  color: #f39c12;
+}
+
+
+/* ---------------------------------- */
+/*           FORM SECTION             */
+/* ---------------------------------- */
+.form-full-body {
+    width: 100%;
+    display: flex;
+    
+    justify-content: center;
+    height: fit-content;
+}
+
+.full-body {
+    margin-top: 5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    width: 30rem;
+    padding: 2rem;
+    margin: 2rem;
+    border: 1px solid #ded9d9;
+    border-radius: 2rem;
+    height: auto;
+}
+
+.form-container form div {
+    margin-top: 0.5rem;
+}
+
+.form-container form div label {
+    color: #7b1e1e;
+}
+
+.form-container form .btn-submit {
+    margin-top: 1rem;
+}
+/* ---------------------------------- */
+/*           EDIT FORM SECTION        */
+/* ---------------------------------- */
+.edit-image-div{
+    display: flex;
+    align-items: center;
+}
+.edit-preview-image-div h6{
+    font-size: 0.7rem;
+
+}
+.edit-preview-image{
+    
+    border-radius: 0.5rem;
+}
+
+/* ---------------------------------- */
+/*              ERROR PAGE STYLE      */
+/* ---------------------------------- */
+
+.error-box {
+  max-width: 80%;
+  margin: 2rem auto;
+  margin-top: 4rem;
+  padding: 2rem;
+  background-color: #fff3f3;
+  border: 2px solid #ffcccc;
+  border-radius: 12px;
+  box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: #b30000;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.error-box h1 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.error-box p {
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.error-box a {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.4rem;
+  
+  transition: background-color 0.3s ease;
+}
+
+.error-box a:hover {
+  background-color: #ff9999;
+}
+
+/* Optional: fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.submit-btn-div{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+
+
+/* maps */
+#map{
+    width: 80vw;
+    height: 20rem;
+    border-radius: 0.5rem;
+}
+

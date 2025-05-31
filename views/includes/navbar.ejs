@@ -1,0 +1,157 @@
+<nav class="navbar-main-div">
+  <a class="navbar-brand" style="margin-left: 20px;" href="/listings">
+    <img class="logo-img" src="/images/logo.png" alt="">
+  </a>
+  <div class="spacing"></div>
+
+  <div class="toggler-of-navbar">
+    <i class="fa-solid fa-circle-user user-icon"></i>
+    <i class="fa-solid fa-bars menu-icon"></i>
+  </div>
+
+  <div class="navbar-links-div-div" id="navbarNavAltMarkup">
+    <div class="navbar-links-div">
+      <a href="/listings">Listings</a>
+      <a href="/listings/new">Add new</a>
+      <% if (!currUser) { %>
+        <a class="sign-in" href="/signup">SignIn</a>
+        <a class="login-in" href="/login">LogIn</a>
+      <% } else { %>
+        <a class="log-out" href="/logout">Logout</a>
+      <% } %>
+    </div>
+  </div>
+</nav>
+
+<style>
+  body {
+    margin-top: 3.5rem;
+  }
+
+  .navbar-main-div {
+    z-index: 1;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 5rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #878484;
+  }
+
+  .navbar-brand i {
+    margin: 1rem;
+    font-size: 2.5rem;
+  }
+
+  .logo-img {
+    height: 1.7rem;
+    border-radius: 25%;
+  }
+
+  .spacing {
+    flex: 1;
+  }
+
+  .navbar-links-div-div {
+    margin: 1rem;
+  }
+
+  .navbar-links-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .navbar-links-div a {
+    color: #000;
+    padding: 0.6rem;
+    border-radius: 0.3rem;
+    font-size: 0.9rem;
+  }
+
+  .navbar-links-div a:hover {
+    color: #fff;
+    background-color: black;
+  }
+
+  .toggler-of-navbar {
+    display: none;
+  }
+
+  .user-icon {
+    font-size: 2rem;
+    opacity: 0.6;
+  }
+
+  .user-icon:hover {
+    opacity: 1;
+  }
+
+  .menu-icon {
+    margin-right: 0.5rem;
+    font-size: 1.4rem;
+  }
+
+  @media (max-width: 700px) {
+    .toggler-of-navbar {
+      display: flex;
+      flex-direction: row;
+      align-items: center !important;
+      justify-content: space-between;
+      gap: 0.7rem;
+      color: #424141;
+      font-size: 1.6rem;
+      border: 1px solid #9d9797;
+      background-color: #fff !important;
+      margin: 1rem;
+      padding: 0.2rem;
+      border-radius: 2rem;
+    }
+
+    .navbar-links-div-div {
+      margin: 0;
+      position: fixed;
+      top: 5rem;
+      right: -200px;
+      z-index: 5;
+      width: 200px;
+      transition: right 0.3s ease-in-out;
+    }
+
+    .toggler-class {
+      right: 0px;
+    }
+
+    .navbar-links-div {
+      display: flex;
+      flex-direction: column;
+      height: 60vh;
+      width: 100%;
+      padding: 1rem;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 0 0 0 1rem;
+      justify-content: flex-start;
+      align-items: start;
+    }
+
+    .navbar-links-div a {
+      color: black;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.querySelector(".toggler-of-navbar");
+    const navbarMenu = document.getElementById("navbarNavAltMarkup");
+
+    toggleBtn.addEventListener("click", () => {
+      navbarMenu.classList.toggle("toggler-class");
+    });
+  });
+</script>

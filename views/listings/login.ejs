@@ -1,0 +1,48 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+
+  <div class="form-full-body">
+    <div class="form-container">
+      <h2 style="font-size: 1.3rem; display: block; text-align: center;">User Login</h2>
+
+      <form class="form needs-validation" action="/login" method="POST" novalidate>
+
+        <div>
+          <label class="form-label" for="login-username">Enter Username</label>
+          <input
+            type="text"
+            id="login-username"
+            name="username"
+            placeholder="Enter username"
+            required
+            maxlength="100"
+            class="form-control"
+          />
+          <div class="valid-feedback">Looks good</div>
+          <div class="invalid-feedback">Enter a valid username</div>
+        </div>
+
+        <div>
+          <label class="form-label" for="login-password">Password</label>
+          <input
+            type="password"
+            id="login-password"
+            name="password"
+            placeholder="Enter password"
+            required
+            maxlength="100"
+            class="form-control"
+          />
+          <div class="valid-feedback">Looks good</div>
+          <div class="invalid-feedback">Enter a valid password</div>
+        </div>
+
+        <div class="submit-btn-div">
+          <button type="submit" class="btn-submit btn btn-danger btn-sm">Login</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+</body>

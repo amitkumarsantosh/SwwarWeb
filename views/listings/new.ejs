@@ -1,0 +1,143 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+  
+
+  <div class="form-full-body">
+    <div class="form-container">
+    <h2 style="font-size: 1.3rem;">Create New Listing</h2>
+    <form class="from needs-validation" action="/listings/new" method="POST" novalidate enctype="multipart/form-data">
+
+      <div>
+        <label class="form-label" for="title">Title</label>
+        <input
+          type="text"
+          id="title"
+          name="listing[title]"
+          placeholder="Enter listing title"
+          required
+          maxlength="100"
+          class="form-control"
+        />
+        <div class="valid-feedback">Looks good</div>
+        <div class="invalid-feedback">Entre valid title</div>
+
+      </div>
+      
+
+      <div>
+        <label class="form-label" for="description">Description</label>
+        <textarea
+          id="description"
+          name="listing[description]"
+          placeholder="Enter listing description"
+          class="form-control"
+
+          
+          required
+        ></textarea>
+        <div class="valid-feedback">Looks good</div>
+        <div class="invalid-feedback">Entre valid Description</div>
+
+        
+      </div>
+      <div>
+        <label class="form-label" for="description">Add listing Image</label>
+        
+        <input
+          type="file"
+          id="image-url"
+          name="listing[image]"
+          placeholder="Add Image"
+          min="0"
+          step="1"
+          required
+          
+          class="form-control"
+
+        />
+        <div class="valid-feedback">Looks good</div>
+        <div class="invalid-feedback">Entre valid Image url</div>
+
+        
+        
+      </div>
+
+      
+
+      
+      <div class="row">
+        <div class="col-4">
+          <label class="form-label" for="price">Price (INR)</label>
+          <input
+            type="number"
+            id="price"
+            name="listing[price]"
+            placeholder="Enter price in INR"
+            min="0"
+            step="1"
+            required
+            class="form-control"
+
+          />
+          
+          <div class="valid-feedback">Looks good</div>
+          <div class="invalid-feedback">Entre valid Price</div>
+
+        
+        </div>
+
+
+        <div class="col-8">
+          <label class="form-label" for="country">Country</label>
+          <input
+            type="text"
+            id="country"
+            name="listing[country]"
+            placeholder="Enter Country"
+            required
+            maxlength="100"
+            class="form-control"
+
+          />
+        
+        </div>
+
+
+      </div>
+
+      
+
+      <div>
+        <label class="form-label" for="location">Location</label>
+        <input
+          type="text"
+          id="location"
+          name="listing[location]"
+          placeholder="Enter location"
+          required
+          maxlength="100"
+          class="form-control"
+
+        />
+        <div class="valid-feedback">Looks good</div>
+        <div class="invalid-feedback">Entre valid location</div>
+
+        
+      </div>
+
+      
+
+      
+
+      
+
+      
+      
+
+      <button type="submit" class="btn-submit btn btn-danger btn-sm">Create Listing</button>
+    </form>
+  </div>
+  </div>
+
+</body>
+
