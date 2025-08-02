@@ -39,7 +39,7 @@ const wrapAsync = require("./utils/wrapAsync");
 // ✅ App Initialization
 // =========================
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 8080;
 
 // =========================
 // ✅ Connect to MongoDB
